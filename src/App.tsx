@@ -1,7 +1,10 @@
 import './App.css'
+import Lesson06 from './lessons/Lesson06/Lesson06'
+import Lesson07 from './lessons/Lesson07/Lesson07'
 
 
 // lessons
+{/* <Lesson06 /> */}
 
 // homeworks
 
@@ -11,7 +14,7 @@ function App() {
 
   return (
     <div className='app'>
-      Hello TS
+ <Lesson07 />
     </div>
   )
 }
