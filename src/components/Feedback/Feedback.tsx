@@ -1,6 +1,12 @@
 import Button from "../Button/Button";
 import "./styles.css";
 import { useState } from "react";
+import {
+  FeedbackContainer,
+  FeedbackButtonContainer,
+  FeedbackResultContainer,
+  FeedbackResetButton,
+} from "./styles";
 
 function Feedback() {
   const [like, setLikeCount] = useState<number>(0);
@@ -24,19 +30,19 @@ function Feedback() {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="result-container">{like}</div>
-      <div className="button-wrapper">
+    <FeedbackContainer>
+      <FeedbackResultContainer>{like}</FeedbackResultContainer>
+      <FeedbackButtonContainer>
         <Button name="Like" type="button" onClick={likeClick} />
-      </div>
-      <div className="button-wrapper">
+      </FeedbackButtonContainer>
+      <FeedbackButtonContainer>
         <Button name="Dislike" type="button" onClick={dislikeClick} />
-      </div>
-      <div className="result-container">{dislike}</div>
-      <div className="reset-button-wrapper">
+      </FeedbackButtonContainer>
+      <FeedbackResultContainer>{dislike}</FeedbackResultContainer>
+      <FeedbackResetButton>
         <Button name="Reset Results" type="button" onClick={resetResults} />
-      </div>
-    </div>
+      </FeedbackResetButton>
+    </FeedbackContainer>
   );
 }
 

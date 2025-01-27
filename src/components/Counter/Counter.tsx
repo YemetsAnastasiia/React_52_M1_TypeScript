@@ -1,42 +1,38 @@
 import Button from "../Button/Button";
-import "./styles.css";
+import {
+  CounterContainer,
+  CounterButtonContainer,
+  CounterResultContainer,
+} from "./styles";
 
 import { useState } from "react";
 
-
 function Counter() {
+  const [counter, setCounter] = useState<number>(0);
 
-    const [counter, setCounter] = useState<number>(0);
+  const onPlusClick = (): void => {
+    setCounter((prevState) => {
+      if (prevState < 20) {
+        return prevState + 1;
+      }
+      return prevState;
+    });
+  };
 
-    const onPlusClick = (): void => {
-        setCounter ((prevState) => {
-            if (prevState < 20){
-                return prevState + 1;
-            }
-            return prevState;
-            
-        });
-    };
+  const onMinusClick = (): void => {
+    setCounter((prevValue) => prevValue - 1); //  prevState - актуальное значение State
+  };
 
-    const onMinusClick = (): void => {
-        setCounter((prevValue) => prevValue -1); //  prevState - актуальное значение State
-    };
-
-
-
-    return (
-        <div className="counter-wrapper">
-            <div className="button-wrapper">
-                <Button name="-" type="button"
-                    onClick={onMinusClick}
-                />
-            </div>
-            <div className="result-container">{counter}</div>
-            <div className="button-wrapper">
-                <Button name="+" type="button"
-                    onClick={onPlusClick} />
-            </div>
-        </div>
-    );
+  return (
+    <CounterContainer>
+      <CounterButtonContainer>
+        <Button name="-" type="button" onClick={onMinusClick} />
+      </CounterButtonContainer>
+      <CounterResultContainer>{counter}</CounterResultContainer>
+      <CounterButtonContainer>
+        <Button name="+" type="button" onClick={onPlusClick} />
+      </CounterButtonContainer>
+    </CounterContainer>
+  );
 }
 export default Counter;

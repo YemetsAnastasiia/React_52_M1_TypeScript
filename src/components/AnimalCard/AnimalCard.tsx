@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
-import "./styles.css";
 import { AnimalCardProps } from "./types";
+import {AnimalCardContainer, AnimalCardImage} from './styles';
 
 function AnimalCard({
   animal_name,
@@ -10,12 +10,12 @@ function AnimalCard({
 }: AnimalCardProps) {
   
   return (
-    <div className="animal-card-wrapper">
+    <AnimalCardContainer>
       <h3>{animal_name}</h3>
       <div>{animal_species}</div>
-      <img src={animal_image} className="card-image" />
+      <AnimalCardImage src={animal_image} className="card-image" />
       {children}
-    </div>
+    </AnimalCardContainer>
   );
 }
 

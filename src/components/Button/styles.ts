@@ -10,7 +10,15 @@ width: 100%;
     border-radius: 4px;
     font-size: 24px;
     color: rgb(224, 224, 237);
+
+
+    &:disabled {
+    background-color: #bcadad; 
+    cursor: not-allowed;
+    opacity: 0.6; 
+  }
 `
+
 
 
 /* .main-button {
