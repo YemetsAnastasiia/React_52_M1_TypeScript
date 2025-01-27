@@ -1,21 +1,30 @@
-import './App.css'
-import Lesson06 from './lessons/Lesson06/Lesson06'
-import Lesson07 from './lessons/Lesson07/Lesson07'
+import GlobalStyles from './styles/GlobalStyles';
 
+//lessons
+// import Lesson06 from './lessons/Lesson06/Lesson06'
+// import Lesson07 from './lessons/Lesson07/Lesson07'
+import Lesson08 from './lessons/Lesson08/Lesson08'
 
-// lessons
-{/* <Lesson06 /> */}
+//homeworks
 
-// homeworks
+//consultations
+// import Consultation03 from './consultations/Consultation03/Consultation03'
 
-// consultations
 
 function App() {
 
   return (
-    <div className='app'>
- <Lesson07 />
-    </div>
+    <>
+      <GlobalStyles />
+      {/* Topic: TypeScript - Introduction */}
+      {/* <Lesson06/> */}
+      {/* <Consultation03/> */}
+      {/* Topic: TypeScript - Object types, enum */}
+      {/* <Lesson07 /> */}
+      {/* Topic: Styling components */}
+      <Lesson08 />
+    </>
   )
 }
+
 export default App

@@ -1,17 +1,12 @@
 import "./styles.css";
 import { ButtonProps } from "./types";
-
-/* interface ButtonProps {
-  name?: string;
-  type: "submit" | "button" | "reset";
-  onClick: () => void; // типизация функции кот ничего не возвращает
-} */
+import { MainButton } from "./styles";
 
 function Button({ name = "SEND", type = "button", onClick }: ButtonProps) {
   return (
-    <button className="main-button" type={type} onClick={onClick}>
+    <MainButton type={type} onClick={onClick}>
       {name}
-    </button>
+    </MainButton>
   );
 }
 export default Button;
