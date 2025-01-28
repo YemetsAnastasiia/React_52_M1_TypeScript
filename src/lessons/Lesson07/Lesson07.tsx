@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Lesson07Container } from "./styles";
 
 function Lesson07() {
   // Тип any - любой тип
@@ -64,119 +65,98 @@ function Lesson07() {
   // используем type для создания усложненного типа
   type Weight = string | number | null;
 
-
   // используем type для создания типа объекта
   type Animal = {
     name: string;
     weight?: Weight;
   };
 
-
-
   const animalData: Animal = {
     name: "Lion",
     weight: 200,
   };
 
+  const personalWeight: Weight = null;
 
-  const personalWeight : Weight = null;
+  // объединение типов
+  type NewAnimal = Animal & { country: string };
 
+  const zebraAnimal: NewAnimal = {
+    name: "Zebra",
+    weight: "150",
+    country: "Afrika",
+  };
 
+  // Generic & Type - дженерик это переменная в которую мы можем
+  // подставить нужный тип В МОМЕНТ ИССПОЛЬЗОВАНИЯ type
+  type CustomTylel<T = string> = [number, string, T]; // указание джененирика по умолч <T = string>
 
-// объединение типов
-type NewAnimal = Animal & {country: string}
+  const arrayMix: CustomTylel<boolean> = [12, "Admin", true];
+  const arrayMix2: CustomTylel<number> = [18, "Tom", 303];
+  const arrayMix3: CustomTylel = [23, "Bob", "303"];
 
-const zebraAnimal : NewAnimal = {
-    name: 'Zebra',
-    weight: '150', 
-    country: 'Afrika'
-}
+  // Generic & Interface
+  interface Fruit<T = number> {
+    title: string;
+    address: T;
+  }
 
+  const fruit1: Fruit = {
+    title: "Apple",
+    address: 23456,
+  };
 
-// Generic & Type - дженерик это переменная в которую мы можем 
-// подставить нужный тип В МОМЕНТ ИССПОЛЬЗОВАНИЯ type
-type CustomTylel <T = string> = [number, string, T]; // указание джененирика по умолч <T = string>
+  const fruit: Fruit<string> = {
+    title: "Grape",
+    address: "Berlin 14058",
+  };
 
-const arrayMix: CustomTylel<boolean> = [12, 'Admin', true];
-const arrayMix2: CustomTylel<number> = [18, 'Tom', 303];
-const arrayMix3 : CustomTylel = [23, 'Bob', '303'];
+  // Пример исспользования union для ограничения переменной по значению
+  // Пример использования union для ограничения переменной по значениям
+  type Status = "success" | "error" | "loading";
+  const status: Status = "error";
+  // const apiStatus: Status = 'default';
 
+  // ЧИСЛОВЫЕ ПЕРЕЧИСЛЕНИЯ
+  enum Colors {
+    Red,
+    Black = 1,
+    Green,
+  }
+  let currentCollor: Colors = Colors.Black;
+  console.log(currentCollor);
 
+  // -- СТРОКОВОЕ ПЕРЕЧИСЛЕНИЕ
+  // enum для цветов светофора
+  enum TRAFFIC_LIGHT {
+    RED = "red",
+    YELLOW = "yellow",
+    GREEN = "green",
+  }
 
+  const getAction = (light: TRAFFIC_LIGHT): string => {
+    switch (light) {
+      case TRAFFIC_LIGHT.RED:
+        return "Stop!";
+      case TRAFFIC_LIGHT.YELLOW:
+        return "Be ready to go!";
+      case TRAFFIC_LIGHT.GREEN:
+        return "You can go";
+    }
+  };
 
-// Generic & Interface 
-interface Fruit <T = number>{
-    title: string,
-    address: T
-}
+  console.log(getAction(TRAFFIC_LIGHT.YELLOW));
 
-const fruit1: Fruit = {
-    title: 'Apple',
-    address: 23456
-}
+  // -- Mixed enum (строки и числа)
+  enum RESULT {
+    YES = "yes",
+    NO = 0,
+  }
 
-const fruit : Fruit<string> = {
-    title: 'Grape',
-    address: 'Berlin 14058'
-}
+  const result: RESULT = RESULT.NO;
+  console.log(result); // получаем 0
 
-// Пример исспользования union для ограничения переменной по значению 
-// Пример использования union для ограничения переменной по значениям
-type Status = 'success' | 'error' | 'loading';
-const status: Status = 'error';
-// const apiStatus: Status = 'default';
-
-
-
-
-// ЧИСЛОВЫЕ ПЕРЕЧИСЛЕНИЯ 
-enum Colors {Red, Black  = 1, Green};
-let currentCollor: Colors = Colors.Black;
-console.log(currentCollor);
-
-// -- СТРОКОВОЕ ПЕРЕЧИСЛЕНИЕ
-// enum для цветов светофора 
-enum TRAFFIC_LIGHT {
-    RED = 'red',
-    YELLOW = 'yellow',
-    GREEN = 'green' 
-}
-
-const getAction = (light: TRAFFIC_LIGHT): string => {
-    switch(light){
-        case TRAFFIC_LIGHT.RED :
-            return 'Stop!';
-        case TRAFFIC_LIGHT.YELLOW:
-            return 'Be ready to go!';
-        case TRAFFIC_LIGHT.GREEN:
-            return 'You can go';
-    };
-};
-
-console.log(getAction(TRAFFIC_LIGHT.YELLOW));
-
-// -- Mixed enum (строки и числа)
-enum RESULT {
-    YES = 'yes', 
-    NO = 0
-}
-
-const result : RESULT = RESULT.NO;
-console.log(result); // получаем 0 
-
-
-
-
-
-
-
-
-
-
-  return (
-  <div className="lesson07-wrapper">
-    TS-Lesson07
-    </div>);
+  return <Lesson07Container>TS-Lesson07</Lesson07Container>;
 }
 
 export default Lesson07;
