@@ -4,6 +4,9 @@ import "./styles.css";
 import { BoxInfo, ContentContainer, Image, Text } from "./styles";
 import Example1 from "../../assets/photo_2025-01-27_12-26-21.jpg";
 import Example2 from "../../assets/photo_2025-01-27_12-25-56.jpg";
+import AnimalCard from "../../components/AnimalCard/AnimalCard";
+import Counter from "../../components/Counter/Counter";
+import Product from "../../components/Product/Product";
 
 function Lesson08() {
   //Объект для inline стилей (2 способ)
@@ -33,6 +36,8 @@ function Lesson08() {
           <Text>Emotion example 2</Text>
         </ContentContainer>
       </BoxInfo>
+    <Counter />
+   
     </div>
   );
 }

@@ -4,6 +4,8 @@ import GlobalStyles from './styles/GlobalStyles';
 // import Lesson06 from './lessons/Lesson06/Lesson06'
 // import Lesson07 from './lessons/Lesson07/Lesson07'
 import Lesson08 from './lessons/Lesson08/Lesson08'
+import Product from './components/Product/Product';
+import Homework08 from './homeworks/Homework08/Homework08';
 
 //homeworks
 
@@ -22,7 +24,11 @@ function App() {
       {/* Topic: TypeScript - Object types, enum */}
       {/* <Lesson07 /> */}
       {/* Topic: Styling components */}
-      <Lesson08 />
+     {/*  <Lesson08 />  */}
+
+
+     <Homework08/>
+  
     </>
   )
 }
