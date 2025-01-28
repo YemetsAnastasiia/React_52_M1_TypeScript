@@ -17,6 +17,12 @@ export const AnimalCardContainer = styled.div `
       width: 150px;
   `
 
+  export const AnimalNameBlock = styled.h3 `
+      `
+
+  export const AnimalSpeciesBlock = styled.div `
+      `
+
 /* 
 .animal-card-wrapper {
     display: flex;

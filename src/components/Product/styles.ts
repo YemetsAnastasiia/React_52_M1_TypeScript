@@ -18,7 +18,8 @@ export const ProductImg = styled.img`
   width: 220px;
   height: 200px;
 `
-
+export const ProductNameBlock = styled.h2 `
+`
 /* 
 .product-wrapper {
   display: flex;

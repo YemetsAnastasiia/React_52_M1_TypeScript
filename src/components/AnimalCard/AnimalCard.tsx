@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import { AnimalCardProps } from "./types";
-import {AnimalCardContainer, AnimalCardImage} from './styles';
+import {AnimalCardContainer, AnimalCardImage, AnimalNameBlock, AnimalSpeciesBlock} from './styles';
 
 function AnimalCard({
   animal_name,
@@ -11,8 +11,8 @@ function AnimalCard({
   
   return (
     <AnimalCardContainer>
-      <h3>{animal_name}</h3>
-      <div>{animal_species}</div>
+      <AnimalNameBlock>{animal_name}</AnimalNameBlock>
+      <AnimalSpeciesBlock>{animal_species}</AnimalSpeciesBlock>
       <AnimalCardImage src={animal_image} className="card-image" />
       {children}
     </AnimalCardContainer>
