@@ -13,6 +13,10 @@ function Homework09() {
   const [userEmailValue, setUserEmailValue] = useState<string>("");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
+
+  const [nameResult, setNameResult] = useState<string>('');
+  const [emailResult, setEmailResult] = useState<string>('');
+
   const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     setUserNameValue(event.target.value);
   };
@@ -21,8 +25,15 @@ function Homework09() {
     setUserEmailValue(event.target.value);
   };
 
-  const handleSubmit = () => {
-    setIsSubmitted(true);
+  const showResult = () => {
+    // в момент нажатия на кнопку для отображения результатоа
+    // мы забираем значения из inpu тов
+    // и созраняем их в nameResult и emailResult
+    setNameResult(userNameValue)
+    setEmailResult(userEmailValue)
+
+  setIsSubmitted(true); 
+    /* setIsSubmitted(!isSubmitted); */
   };
 
   return (
@@ -44,19 +55,24 @@ function Homework09() {
           value={userEmailValue}
           onChange={onChangeEmail}
         />
-        <Button onClick={handleSubmit} />
+        <Button 
+        name= 'Show/Hide'
+        onClick={showResult} 
+        // чтобы кнопка была не активна когда поля пустые 
+        disabled={userNameValue === '' && userEmailValue === ''} 
+        />
       </InputsContainer>
       <ResultContainer>
-        {isSubmitted && (
+        {isSubmitted && nameResult && (
           <>
-            <Result>Name: {userNameValue}</Result>
+            <Result>Name: {nameResult}</Result>
           </>
         )}
       </ResultContainer>
       <ResultContainer>
-        {isSubmitted && (
+        {isSubmitted && emailResult && (
           <>
-            <Result>Email: {userEmailValue}</Result>
+            <Result>Email: {emailResult}</Result>
           </>
         )}
       </ResultContainer>
