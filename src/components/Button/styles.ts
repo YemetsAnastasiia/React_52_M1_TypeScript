@@ -5,7 +5,7 @@ interface MainButtonDisable {
 }
 
 export const MainButton = styled.button`
-width: 100%;
+    width: 100%;
     max-height: 80px;
     padding: 20px 54px 20px 54px;
     gap: 10px;
