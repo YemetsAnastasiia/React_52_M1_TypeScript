@@ -27,6 +27,13 @@ export const InputElement = styled.input`
   }
 `;
 
+
+export const ErrorMessage = styled.div `
+height: 18px;
+color: red;
+font-size: 18px;
+`
+
 /* 
 .input-container {
    display: flex;

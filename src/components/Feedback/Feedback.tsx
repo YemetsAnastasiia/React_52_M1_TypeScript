@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+import Button from "components/Button/Button";
 import "./styles.css";
 import { useState } from "react";
 import {
@@ -7,6 +7,7 @@ import {
   FeedbackResultContainer,
   FeedbackResetButton,
 } from "./styles";
+
 
 function Feedback() {
   const [like, setLikeCount] = useState<number>(0);

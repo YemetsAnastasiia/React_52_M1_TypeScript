@@ -8,6 +8,8 @@ import Lesson09 from './lessons/Lesson09/Lesson09'
 import Lesson10 from './lessons/Lesson10/Lesson10'
 import Homework10 from './homeworks/Homework10/Homework10'
 
+import Lesson12 from 'lessons/Lesson12/Lesson12'
+
 //homeworks
 // import Homework08 from './homeworks/Homework08/Homework08'
 
@@ -20,6 +22,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+       {/*  <Homework10/> */}
       {/* Topic: TypeScript - Introduction */}
       {/* <Lesson06/> */}
       {/* <Consultation03/> */}
@@ -31,7 +34,9 @@ function App() {
       {/* Topic: Control components, useEffect */}
       {/* <Lesson09 /> */}
      {/*  <Lesson10/> */}
-    <Homework10/>
+    
+     <Lesson12/>
+  
     </>
   )
 }
