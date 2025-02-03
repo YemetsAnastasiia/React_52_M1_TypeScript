@@ -15,6 +15,10 @@ import Home from 'pages/Home/Home'
 import About from 'pages/About/About'
 import Users from 'pages/Users/Users'
 import User from 'pages/Users/components/User/User'
+import Facebook from 'pages/Clients/components/Facebook/Facebook'
+import Insta from 'pages/Clients/components/Insta/Insta'
+import Twitter from 'pages/Clients/components/Twitter/Twitter'
+import Clients from 'pages/Clients/Clients'
 
 
 //homeworks
@@ -44,6 +48,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/user' element={<User />} />
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/facebook' element={<Facebook/>}/>
+          <Route path='/clients/insta' element={<Insta/>}/>
+          <Route path='/clients/twitter' element={<Twitter/>}/>
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}
