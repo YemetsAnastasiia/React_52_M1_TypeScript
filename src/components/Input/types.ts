@@ -7,5 +7,7 @@ export interface InputProps {
   label?: string;
   input_id?: string;
   value: string;
+  errorMessage? : string
+  
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void; // базовая типизация 
 }
