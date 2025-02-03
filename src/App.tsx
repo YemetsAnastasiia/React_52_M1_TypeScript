@@ -9,6 +9,7 @@ import Lesson10 from './lessons/Lesson10/Lesson10'
 import Homework10 from './homeworks/Homework10/Homework10'
 
 import Lesson12 from 'lessons/Lesson12/Lesson12'
+import Homework12 from 'homeworks/Homework12/Homework12'
 
 //homeworks
 // import Homework08 from './homeworks/Homework08/Homework08'
@@ -35,7 +36,9 @@ function App() {
       {/* <Lesson09 /> */}
      {/*  <Lesson10/> */}
     
-     <Lesson12/>
+ {/*  <Lesson12/> * */}
+
+<Homework12/>
   
     </>
   )
