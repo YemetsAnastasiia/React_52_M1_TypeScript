@@ -54,7 +54,7 @@ function EmployeeForm() {
           name="age"
           label="Age *"
           placeholder="Enter your age"
-          value={formik.values.age.toString()}
+          value={formik.values.age}
           onChange={formik.handleChange}
           errorMessage={formik.errors.age}
         />
