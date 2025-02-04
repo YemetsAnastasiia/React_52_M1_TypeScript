@@ -19,6 +19,7 @@ import Facebook from 'pages/Clients/components/Facebook/Facebook'
 import Insta from 'pages/Clients/components/Insta/Insta'
 import Twitter from 'pages/Clients/components/Twitter/Twitter'
 import Clients from 'pages/Clients/Clients'
+import Lesson14 from 'lessons/Lesson14/Lesson14'
 
 
 //homeworks
@@ -52,6 +53,11 @@ function App() {
           <Route path='/clients/facebook' element={<Facebook/>}/>
           <Route path='/clients/insta' element={<Insta/>}/>
           <Route path='/clients/twitter' element={<Twitter/>}/>
+          {/* --Topic: useContext */}
+          <Route path='/lesson14' element={<Lesson14/>} />
+          {/* Route * - этот route показывает компонент, если маршрута не существует в перечисленных выше */}
+          <Route path='*' element='Page not found'/>
+
         </Routes>
       </Layout>
       {/* --Topic: TypeScript - Introduction */}

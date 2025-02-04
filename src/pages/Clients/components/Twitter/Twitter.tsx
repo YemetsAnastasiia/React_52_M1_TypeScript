@@ -1,4 +1,4 @@
-import { TwitterPage, TwitterTitle, TwitterInfo } from '../styles';
+import { TwitterPage, TwitterTitle, TwitterInfo } from './styles';
 
 function Twitter() {
   return (

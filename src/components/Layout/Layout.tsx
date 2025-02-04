@@ -9,13 +9,17 @@ import {
   Main,
   Footer,
 } from "./styles";
+import { Link, useNavigate } from "react-router-dom";
 
 function Layout({ children }: LoyoutProps) {
+const navigate = useNavigate();
+
   return (
     <LayoutComponent>
       <Header>
-        <LogoContainer>
-        </LogoContainer>
+          {/*   второй способ перехода на главную страницу при клике на логотип 
+          с использованием (useNavigate )*/}
+          <LogoContainer onClick={() => navigate('/')}></LogoContainer>{" "}
         <NavContainer>
           <StyledNavLink
             to="/"
@@ -49,11 +53,21 @@ function Layout({ children }: LoyoutProps) {
           >
             Clients
           </StyledNavLink>
+          <StyledNavLink
+            to='/lesson14'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            Lesson 14
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <LogoContainer></LogoContainer>
+      {/*   первый способ перехода на главную страницу при клике на логотип */}
+      <Link to="/">
+          <LogoContainer></LogoContainer>{" "}
+        </Link>
       </Footer>
     </LayoutComponent>
   );
