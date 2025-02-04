@@ -14,7 +14,8 @@ function Layout({ children }: LoyoutProps) {
   return (
     <LayoutComponent>
       <Header>
-        <LogoContainer></LogoContainer>
+        <LogoContainer>
+        </LogoContainer>
         <NavContainer>
           <StyledNavLink
             to="/"
@@ -24,8 +25,6 @@ function Layout({ children }: LoyoutProps) {
           >
             Home
           </StyledNavLink>
-        </NavContainer>
-        <NavContainer>
           <StyledNavLink
             to="/about"
             style={({ isActive }) => ({
@@ -34,8 +33,6 @@ function Layout({ children }: LoyoutProps) {
           >
             About
           </StyledNavLink>
-        </NavContainer>
-        <NavContainer>
           <StyledNavLink
             to="/users"
             style={({ isActive }) => ({
@@ -43,6 +40,14 @@ function Layout({ children }: LoyoutProps) {
             })}
           >
             Users
+          </StyledNavLink>
+          <StyledNavLink
+            to="/clients"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? "underline" : "none",
+            })}
+          >
+            Clients
           </StyledNavLink>
         </NavContainer>
       </Header>
