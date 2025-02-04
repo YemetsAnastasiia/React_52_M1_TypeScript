@@ -1,4 +1,4 @@
-import { InstaPage, InstaTitle, InstaInfo } from '../styles';
+import { InstaPage, InstaTitle, InstaInfo } from './styles';
 
 function Insta() {
   return (

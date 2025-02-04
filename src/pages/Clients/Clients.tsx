@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ClientsPage, Title } from "./styles";
+import { ClientsPage, Title, StyledLink } from "./styles";
 
 import { Link } from "react-router-dom"
 
@@ -8,9 +8,9 @@ function Clients() {
   return (
     <ClientsPage>
       <Title>Clients</Title>
-      <Link  to='facebook'>Go to Facebook page</Link>
-      <Link  to='insta'>Go to Instagram page</Link>
-      <Link  to='twitter'>Go to Twitter page</Link>
+      <StyledLink  to='facebook'>Go to Facebook page</StyledLink>
+      <StyledLink  to='insta'>Go to Instagram page</StyledLink>
+      <StyledLink  to='twitter'>Go to Twitter page</StyledLink>
     </ClientsPage>
   );
 }

@@ -1,4 +1,4 @@
-import { FacebookPage, FacebookTitle, FacebookInfo } from '../styles';
+import { FacebookPage, FacebookTitle, FacebookInfo } from './styles';
 
 function Facebook() {
   return (
